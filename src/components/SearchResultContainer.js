@@ -18,7 +18,7 @@ class SearchResultContainer extends Component {
     API.search()
       .then(res => {
         console.log(res);
-        this.setState({ results: res.data.message })
+        this.setState({ results: res.data.results })
       })
       .catch(err => console.log(err));
   };
