@@ -39,7 +39,7 @@ class SearchResultContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="row justify-content-center">
         <SearchForm
           search={this.state.search}
           handleFormSubmit={this.handleFormSubmit}

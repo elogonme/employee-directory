@@ -4,9 +4,12 @@ import SearchResultContainer from './components/SearchResultContainer';
 
 function App() {
   return (
-    <div className="container">
+    <div>
       <PageBanner />
-      <SearchResultContainer />
+      <div className="container">
+        <SearchResultContainer />
+      </div>
+      
     </div>
   );
 }
