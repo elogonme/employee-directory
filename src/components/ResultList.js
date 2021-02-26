@@ -2,7 +2,7 @@ import React from "react";
 
 function ResultList(props) {
   return (
-    <table className="table table-striped">
+    <table className="table table-striped text-center">
       <thead>
         <tr>
           <th scope="col">Photo</th>
@@ -16,12 +16,12 @@ function ResultList(props) {
       <tbody>
         {props.results.map((result, i) => (
           <tr key={i}>
-            <td><img alt="User" className="img-fluid rounded" src={result.picture.medium} /></td>
-            <td>{`${result.name.first} ${result.name.last}`}</td>
-            <td>{result.phone}</td>
-            <td>{result.email}</td>
-            <td>{result.location.city}</td>
-            <td>{result.dob.date.substring(0, 10).split("-").reverse().join("-")}</td>
+            <td><img alt="User" className="img-fluid round shadow ml-2" src={result.picture.medium} /></td>
+            <td className="align-middle">{`${result.name.first} ${result.name.last}`}</td>
+            <td className="align-middle">{result.phone}</td>
+            <td className="align-middle">{result.email}</td>
+            <td className="align-middle">{result.location.city}</td>
+            <td className="align-middle">{result.dob.date.substring(0, 10).split("-").reverse().join("-")}</td>
           </tr>
         ))}
       </tbody>

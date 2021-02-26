@@ -4,7 +4,7 @@ import SearchResultContainer from './components/SearchResultContainer';
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <PageBanner />
       <SearchResultContainer />
     </div>
