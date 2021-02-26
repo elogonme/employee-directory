@@ -9,13 +9,13 @@ class SearchResultContainer extends Component {
     results: []
   };
 
-  // When this component mounts, search the Pup API for pictures of pups
+  // When this component mounts, get Employees from API
   componentDidMount() {
-    this.searchPup("kittens");
+    this.getEmployees();
   }
 
-  searchPup = query => {
-    API.search(query)
+  getEmployees = () => {
+    API.search()
       .then(res => {
         console.log(res);
         this.setState({ results: res.data.message })
