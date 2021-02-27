@@ -6,7 +6,8 @@ import API from "./utils/API";
 class SearchResultContainer extends Component {
   state = {
     search: "",
-    results: []
+    employees: [],
+    filtered: []
   };
 
   // When this component mounts, get Employees from API
@@ -18,7 +19,8 @@ class SearchResultContainer extends Component {
     API.search()
       .then(res => {
         console.log(res);
-        this.setState({ results: res.data.results })
+        this.setState({ employees: res.data.results,
+         filtered: res.data.results });
       })
       .catch(err => console.log(err));
   };
@@ -26,15 +28,19 @@ class SearchResultContainer extends Component {
   handleInputChange = event => {
     const name = event.target.name;
     const value = event.target.value;
-    this.setState({
-      [name]: value
-    });
-  };
 
-  // When the form is submitted, search the Pup API for `this.state.search`
-  handleFormSubmit = event => {
-    event.preventDefault();
-    this.searchPup(this.state.search);
+    // Filter array items based on search criteria (query) 
+    function filterItems(arr, query) {
+      return arr.filter(function(el) {
+          return el.name.first.toLowerCase().indexOf(query.toLowerCase()) !== -1 || el.name.last.toLowerCase().indexOf(query.toLowerCase()) !== -1
+      })
+    }
+
+    let employees = filterItems(this.state.employees, value);
+    this.setState({
+      [name]: value,
+      filtered: employees
+    });
   };
 
   render() {
@@ -42,10 +48,9 @@ class SearchResultContainer extends Component {
       <div className="row justify-content-center">
         <SearchForm
           search={this.state.search}
-          handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
         />
-        <ResultList results={this.state.results} />
+        <ResultList results={this.state.filtered} />
       </div>
     );
   }

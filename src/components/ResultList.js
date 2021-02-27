@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FaSortAlphaDown, FaSortAlphaUpAlt, BiSort, } from 'react-icons/fa';
+import { FaSortAlphaDown, FaSortAlphaUpAlt } from 'react-icons/fa';
 
 const sortTypes = {
   down: {
@@ -14,7 +14,7 @@ const sortTypes = {
   },
   up: {
     fn: (a, b) => {
-      var nameA=a.name.first.toLowerCase(), nameB=b.name.first.toLowerCase();
+      var nameA=a.name.first.toLowerCase(), nameB=b.name.last.toLowerCase();
       if (nameA > nameB) //sort string ascending
         return -1;
       if (nameA < nameB)
@@ -61,10 +61,7 @@ class ResultList extends Component {
               </th>
             <th scope="col">Phone</th>
             <th scope="col">Email</th>
-            <th scope="col">
-              <FaSortAlphaDown className="text-info mr-1" />
-              Location
-              </th>
+            <th scope="col">Location</th>
             <th scope="col">DOB</th>
           </tr>
         </thead>
