@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FaSortAlphaDown, FaSortAlphaUpAlt, AiOutlineMail } from 'react-icons/fa';
+import { FaSortAlphaDown, FaSortAlphaUpAlt } from 'react-icons/fa';
 
 const sortTypes = {
   down: {
