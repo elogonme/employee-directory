@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FaSortAlphaDown, FaSortAlphaUpAlt } from 'react-icons/fa';
 
+// object with sort type functions to make sorting ascending or descending
 const sortTypes = {
   down: {
     fn: (a, b) => {
@@ -24,6 +25,7 @@ const sortTypes = {
   },
 };
 
+// Component with results - list of employees in table
 class ResultList extends Component {
   state = {
 		currentSort: 'down'

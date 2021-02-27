@@ -24,6 +24,7 @@ class SearchResultContainer extends Component {
       .catch(err => console.log(err));
   };
 
+  // Function to handle input change when user types in search field
   handleInputChange = event => {
     const name = event.target.name;
     const value = event.target.value;
@@ -35,6 +36,7 @@ class SearchResultContainer extends Component {
       })
     }
 
+    // set components state to new filtered array of employees to get update on page
     let employees = filterItems(this.state.employees, value);
     this.setState({
       [name]: value,

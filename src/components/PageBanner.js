@@ -1,6 +1,7 @@
 import React from "react";
 import logo from '../img/employees.png';
 
+// Top of the page banner component with title and logo
 function PageBanner() {
   return (
     <div>
