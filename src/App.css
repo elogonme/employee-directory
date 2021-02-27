@@ -23,6 +23,11 @@
   height: 50px;
 }
 
+.sort:hover {
+  cursor: pointer;
+  text-shadow: #282c34;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

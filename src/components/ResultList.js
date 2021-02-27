@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FaSortAlphaDown, FaSortAlphaUpAlt } from 'react-icons/fa';
+import { FaSortAlphaDown, FaSortAlphaUpAlt, AiOutlineMail } from 'react-icons/fa';
 
 const sortTypes = {
   down: {
@@ -52,8 +52,8 @@ class ResultList extends Component {
         <thead>
           <tr>
             <th scope="col">Photo</th>
-            <th scope="col" onClick={this.onSortChange}>
-              {this.state.currentSort === 'down' 
+            <th className="sort" scope="col" onClick={this.onSortChange}>
+              {this.state.currentSort === 'down'  
               ? <FaSortAlphaDown className="text-info mr-1" /> 
               : <FaSortAlphaUpAlt className="text-info mr-1" />
               }
