@@ -5,8 +5,8 @@ function SearchForm(props) {
   return (
     <form className="form-inline">
       <div className="form-group my-2">
-      <div class="input-group-prepend">
-          <div class="input-group-text"><img src={searchIcon} alt="search" /></div>
+      <div className="input-group-prepend">
+          <div className="input-group-text"><img src={searchIcon} alt="search" /></div>
         </div>
         <input
           onChange={props.handleInputChange}
